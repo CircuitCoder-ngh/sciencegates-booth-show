@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Gates Showcase</title>
+<meta name="description" content="Booth showcase for SCIENCEGATES SDN BHD: an animated film of the laboratory and scientific instruments they supply, with an interactive catalogue of 37 principal brands and 390 products.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/icon.png" type="image/png">
+<link rel="stylesheet" href="assets/css/show.css">
+</head>
+<body>
+
+<!-- Shared SVG paint servers -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-brand" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1920" y2="0">
+      <stop offset="0" stop-color="#ED2926"/><stop offset="1" stop-color="#ED2926"/>
+    </linearGradient>
+    <linearGradient id="g-rg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ED2926"/><stop offset="1" stop-color="#0E8C45"/>
+    </linearGradient>
+    <linearGradient id="g-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFE3F7"/><stop offset="1" stop-color="#6FB8E3"/>
+    </linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".9"/><stop offset=".5" stop-color="#E8F1F7" stop-opacity=".6"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="g-heat" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#F7B733"/><stop offset=".6" stop-color="#ED2926"/><stop offset="1" stop-color="#9E1210"/>
+    </linearGradient>
+    <radialGradient id="g-glow">
+      <stop offset="0" stop-color="#ED2926" stop-opacity=".35"/><stop offset="1" stop-color="#ED2926" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<div id="viewport">
+  <div id="stage">
+    <div id="bg"><div class="glow"></div><canvas id="mol" width="1920" height="1080"></canvas></div>
+
+    <header id="topbar">
+      <div class="strip">
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><b id="tb-phone"></b></span>
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm8 7.2L4.6 7.3V8l7.4 4.9L19.4 8v-.7z"/></svg><b id="tb-email"></b></span>
+        <span class="sp"></span>
+        <span id="tb-web"></span>
+      </div>
+      <div class="row">
+        <img class="logo" src="assets/img/logo.png" alt="ScienceGates, Partners in science">
+        <div class="event"><b id="ev-name"></b><span id="ev-sub"></span></div>
+      </div>
+    </header>
+
+    <main id="scenes" aria-live="off"></main>
+
+    <div id="controls" role="toolbar" aria-label="Showcase controls">
+      <button id="c-prev" aria-label="Previous scene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 20 9 12l10-8v16zM5 19V5"/></svg></button>
+      <button id="c-play" aria-label="Pause"><svg viewBox="0 0 24 24" fill="currentColor"><path class="i-pause" d="M7 4h4v16H7zM13 4h4v16h-4z"/><path class="i-play" d="M7 4v16l13-8z" style="display:none"/></svg></button>
+      <button id="c-next" aria-label="Next scene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 4 10 8-10 8V4zM19 5v14"/></svg></button>
+      <button id="c-fs" aria-label="Full screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    </div>
+
+    <nav id="rail" aria-label="Chapters">
+      <svg viewBox="0 0 1920 150" aria-hidden="true">
+        <line class="base" x1="110" y1="50" x2="1600" y2="50" stroke="#E3E3E3" stroke-width="3" stroke-linecap="round"/>
+        <line class="fill" x1="110" y1="50" x2="110" y2="50" stroke="#ED2926" stroke-width="3" stroke-linecap="round"/>
+        <g class="nodes"></g>
+        <circle class="slug-halo" cx="110" cy="50" r="17" fill="#ED2926" opacity=".16"/>
+        <circle class="slug" cx="110" cy="50" r="8" fill="#ED2926" stroke="#FFFFFF" stroke-width="3"/>
+      </svg>
+      <div class="labels"></div>
+      <button id="learn-btn" class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>Learn more</button>
+      <button id="explore-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Explore</button>
+    </nav>
+
+    <section id="deep" class="overlay" hidden aria-label="Learn more"></section>
+    <section id="explore" class="overlay" hidden aria-label="Explore"></section>
+    <section id="detail" class="overlay" hidden aria-label="Product details"></section>
+    <aside id="drawer" hidden aria-label="Details"></aside>
+    <div id="toast" hidden></div>
+  </div>
+</div>
+
+<div id="sv" hidden aria-label="Product sheet">
+  <header>
+    <b id="sv-title"></b>
+    <button class="btn icon" id="sv-prev" aria-label="Previous sheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18 9 12l6-6"/></svg></button>
+    <span id="sv-count"></span>
+    <button class="btn icon" id="sv-next" aria-label="Next sheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+    <button class="btn primary" id="sv-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Close</button>
+  </header>
+  <div id="sv-body"><img id="sv-img" alt=""></div>
+  <div id="sv-hint">Tap to zoom in, drag to move around, tap again to fit.</div>
+</div>
+
+<div id="pdf" hidden>
+  <header>
+    <b id="pdf-title"></b>
+    <button class="btn primary" id="pdf-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>Close document</button>
+  </header>
+  <iframe id="pdf-frame" title="Document viewer"></iframe>
+</div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/qrcode.js"></script>
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/malaysia.js"></script>
+<script src="assets/js/scenes.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
